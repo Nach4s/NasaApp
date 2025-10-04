@@ -12,30 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
         diameter: document.getElementById("diameter").value,
         velocity: document.getElementById("velocity").value,
         distance: document.getElementById("distance").value,
-        latitude: document.getElementById("latitude").value,
-        longitude: document.getElementById("longitude").value,
+        latitude: Number.parseFloat(document.getElementById("latitude").value),
+        longitude: Number.parseFloat(document.getElementById("longitude").value),
       }
 
       console.log("Asteroid data submitted:", asteroidData)
 
-      // Here you would integrate with your 3D Earth model
-      // Example: updateEarthVisualization(asteroidData);
+      if (window.addAsteroidToEarth) {
+        window.addAsteroidToEarth(asteroidData.latitude, asteroidData.longitude, asteroidData)
+        alert(`Asteroid "${asteroidData.name}" has been added to the 3D Earth visualization!`)
+      } else {
+        alert(`Asteroid "${asteroidData.name}" data received. 3D Earth is loading...`)
+      }
 
-      // Show success message (you can customize this)
-      alert(`Asteroid "${asteroidData.name}" has been added to the visualization!`)
-
-      // Optional: Send data to your backend
-      // fetch('/data', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(asteroidData)
-      // })
-      // .then(response => response.json())
-      // .then(data => {
-      //   console.log('Success:', data);
-      // });
+      // Optional: Reset form
+      // asteroidForm.reset();
     })
   }
 
@@ -64,11 +55,3 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 })
-
-// Function to integrate with your 3D Earth model
-// You'll implement this based on your Three.js setup
-function updateEarthVisualization(asteroidData) {
-  // Your 3D visualization code here
-  // This is where you'll add the asteroid to your Three.js scene
-  console.log("Updating 3D visualization with:", asteroidData)
-}
