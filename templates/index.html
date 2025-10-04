@@ -1,253 +1,296 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>M.&.M</title>
-    <link
-      rel="icon"
-      href="https://w7.pngwing.com/pngs/803/598/png-transparent-phoenix-logo-phoenix-red-bird-illustration-leaf-photography-mirror.png"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earth. - NASA Space App Challenge</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/png">
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
+      href="{{ url_for('static', filename='css/styles.css') }}"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
     />
   </head>
   <body>
     <header>
-      <nav>
-        <div class="navbar">
-          <div>
-            <ul class="logo">
-              <li>
-                <a href="#"
-                  ><img
-                    style="width: 20px"
-                    src="https://w7.pngwing.com/pngs/803/598/png-transparent-phoenix-logo-phoenix-red-bird-illustration-leaf-photography-mirror.png"
-                    alt=""
-                  />M.&.M</a
-                >
-              </li>
-            </ul>
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <img
+            src="{{ url_for('static', filename='images/icon.png') }}"
+            alt="Earth. Logo"
+          />
+            <span>Earth.</span>
           </div>
-          <div class="navbar_menu">
-            <ul class="menu">
-              <li><a href="#">Featrus</a></li>
-              <li><a href="#">Downloads</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Careers</a></li>
-            </ul>
-          </div>
+          <ul class="nav-menu">
+            <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+            <li><a href="{{ url_for('team') }}">Team</a></li>
+            <li><a href="{{ url_for('process') }}">Process</a></li>
+            <li><a href="{{ url_for('index') }}#about">About</a></li>
+          </ul>
         </div>
       </nav>
     </header>
 
-    <div class="container">
-      <div class="flex-container">
-        <div class="block_1">
-          <h1><b> Connect Without Limits with your Loved Ones!</b></h1>
-          <p>
-            It is free, simple and works on Android phones, IPhones, tablets,
-            computers, and smart displays.
-          </p>
-          <p class="p_1"><a href="#">GET CALLIFY</a></p>
-        </div>
-      </div>
-
-      <div class="flex-container2">
-        <div class="block_2">
-          <img
-            class="img_fb2"
-            src="https://images.unsplash.com/photo-1621570359341-f54c96d78aa0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1952&q=80"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <div class="flex-container3">
-        <div class="block_3">
-          <h1><b> More than messaging</b></h1>
-          <p>
-            With a variety of calling and messaging features, you have endiess
-            options when it comes to expressing yourseif.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="flex-container4">
-        <div class="block_4">
-          <h1><b>Audio and video call</b></h1>
-          <p>
-            With audio and video calls in imo, you can have free and stable
-            calls with your freinds and family. No mattter they are abroad or
-            not, it is always the best choice for you.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex-container5">
-        <div class="block_5">
-          <img
-            class="img_fb5"
-            src="https://images.unsplash.com/photo-1588873281272-14886ba1f737?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2125&q=80"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <div class="flex-container6">
-        <div class="block_6">
-          <img
-            class="img_fb6"
-            src="https://images.unsplash.com/photo-1612831455359-970e23a1e4e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2125&q=80"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <div class="flex-container7">
-        <div class="block_7">
-          <h1><b>Say Anthing</b></h1>
-          <p>
-            Share text, voice messages,photos, videos, GIFs and files for free.
-            Signal uses your phone is data connection so you can avoid SMS and
-            MMS feets.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex-container8">
-        <div class="block_8">
-          <h1><b>Get Together with Groups</b></h1>
-          <p>
-            Group chats make it easy to stay connected to your family, friends,
-            and coworkes.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex-container9">
-        <div class="block_9">
-          <img
-            class="img_fb9"
-            src="https://images.unsplash.com/photo-1612831820363-9b92f70109a4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <div class="flex-container-bottom">
-        <div class="block_bottom">
-          <h1><b>Try Callify </b></h1>
-          <p>
-            It is free, simple and works on Android phones, IPhones, tablets,
-            computers, and smart displays.
-          </p>
-
-          <p class="botton">
-            <a href="#"
-              ><img class="img_botton" src="img/Google_Play.png" alt=""
-            /></a>
-            <a href="#"
-              ><img class="img_botton" src="img/App_Store.png" alt=""
-            /></a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <footer class="container">
-      <div class="flex-container-footer">
-        <div class="block_footer1">
-          <h1>Callify</h1>
-        </div>
-      </div>
-
-      <div class="flex-container-footer2">
-        <div class="block_footer2">
-          <div>
-            <ul class="column">
-              <li class="title"><b>Callify</b></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Groups</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Support</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block_footer2">
-          <div>
-            <ul class="column">
-              <li class="title"><b>Company</b></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Brand Center</a></li>
-              <li><a href="#">Carreers</a></li>
-              <li><a href="#">Locations</a></li>
-              <li><a href="#">Eco System</a></li>
-              <li><a href="#">Pricing</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block_footer2">
-          <div>
-            <ul class="column">
-              <li class="title"><b>Download</b></li>
-              <li><a href="#">Android</a></li>
-              <li><a href="#">iPhone& iPad</a></li>
-              <li><a href="#">Windows PC</a></li>
-              <li><a href="#">Mac</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="bottom-footer">
-          <div class="bf1">
-            <p>Privacy Policy</p>
-          </div>
-
-          <div class="bf1">
-            <p>Terms of Use</p>
-          </div>
-
-          <div class="bf2">
-            <p>Copyright @ 2021 Callify, All Rights Reservered.</p>
-          </div>
-          <div class="footer-img">
-            <p class="botton">
-              <a href="#"><img class="icon_img" src="img/in.png" alt="" /></a>
-              <a href="#"
-                ><img
-                  class="icon_img"
-                  src="https://image.flaticon.com/icons/png/512/20/20673.png"
-                  alt=""
-              /></a>
-              <a href="#"
-                ><img
-                  class="icon_img"
-                  src="https://pngimg.com/uploads/twitter/twitter_PNG3.png"
-                  alt=""
-              /></a>
+    <main>
+      <!-- Hero Section with 3D Earth Model -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Track Asteroids in Real-Time</h1>
+            <p>
+              Visualize near-Earth objects on an interactive 3D globe. Monitor
+              potential threats and explore asteroid trajectories with
+              cutting-edge technology.
             </p>
           </div>
+
+          <!-- 3D Earth Model Container -->
+          <div class="earth-container" id="earth-model">
+            <!-- Your 3D Earth model will go here -->
+            <div class="earth-placeholder">
+              <p>3D Earth Model</p>
+              <span>Your Three.js/WebGL visualization here</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Asteroid Input Form -->
+      <section class="input-section">
+        <div class="input-container">
+          <h2>Input Asteroid Data</h2>
+          <p>
+            Enter asteroid parameters to visualize its trajectory on the Earth
+            model
+          </p>
+
+          <form class="asteroid-form" id="asteroidForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="asteroidName">Asteroid Name</label>
+                <input
+                  type="text"
+                  id="asteroidName"
+                  placeholder="e.g., 2023 XY1"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="diameter">Diameter (meters)</label>
+                <input
+                  type="number"
+                  id="diameter"
+                  placeholder="e.g., 150"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="velocity">Velocity (km/s)</label>
+                <input
+                  type="number"
+                  id="velocity"
+                  step="0.1"
+                  placeholder="e.g., 25.5"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="distance">Distance from Earth (km)</label>
+                <input
+                  type="number"
+                  id="distance"
+                  placeholder="e.g., 7500000"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="latitude">Approach Latitude</label>
+                <input
+                  type="number"
+                  id="latitude"
+                  step="0.01"
+                  min="-90"
+                  max="90"
+                  placeholder="e.g., 45.23"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="longitude">Approach Longitude</label>
+                <input
+                  type="number"
+                  id="longitude"
+                  step="0.01"
+                  min="-180"
+                  max="180"
+                  placeholder="e.g., -122.45"
+                  required
+                />
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Visualize on Map</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about-section" id="about">
+        <div class="about-container">
+          <h2>About Earth.</h2>
+          <p class="about-intro">
+            Our NASA Space App Challenge project aims to make asteroid tracking
+            accessible and visual for everyone.
+          </p>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🌍</div>
+              <h3>Interactive 3D Globe</h3>
+              <p>
+                Explore near-Earth asteroids on a real-time 3D visualization of
+                our planet with accurate orbital mechanics.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <h3>Real-Time Data</h3>
+              <p>
+                Access up-to-date information from NASA's databases to track
+                current and predicted asteroid trajectories.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🎯</div>
+              <h3>Threat Defence</h3>
+              <p>
+                We are challenging you to defend our home planet from threatening asteroids. 
+                There is also some provided information about them, such as evaluated impact and other risks made by our advanced tools and algorithms.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🔬</div>
+              <h3>Scientific Accuracy</h3>
+              <p>
+                Built on validated astronomical data and physics simulations for
+                educational and research purposes.
+              </p>
+            </div>
+
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section class="mission-section">
+        <div class="mission-container">
+          <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p>
+              To decode the universe’s uncertainty — by giving scientists and citizens the power to see the future of near-Earth 
+              space and protect the planet we call home.
+            </p>
+          </div>
+
+          <div class="mission-image">
+            <img src="{{ url_for('static', filename='images/our_mission.jpg') }}" alt="Space and Earth">
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-container">
+          <h2>Join Our Journey</h2>
+          <p>
+            Learn more about our team and the development process behind
+            Earth.
+          </p>
+          <div class="cta-buttons">
+            <li>
+              <a href="{{ url_for('team') }}" class="cta-btn secondary"
+                >Meet the Team</a
+              >
+            </li>
+            <li>
+              <a href="{{ url_for('process') }}" class="cta-btn secondary"
+                >View Process</a
+              >
+            </li>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Earth.</h3>
+            <p>NASA Space Apps Challenge 2025</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul class="nav-menu-footer">
+              <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+              <li><a href="{{ url_for('team') }}">Team</a></li>
+              <li><a href="{{ url_for('process') }}">Process</a></li>
+              <li><a href="{{ url_for('index') }}#about">About</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="https://www.nasa.gov/" target="_blank">NASA</a></li>
+              <li>
+                <a href="https://cneos.jpl.nasa.gov/" target="_blank">CNEOS</a>
+              </li>
+              <li>
+                <a href="https://www.spaceappschallenge.org/" target="_blank"
+                  >Space Apps</a
+                >
+              </li>
+            </ul>
+          </div>
+
+       
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/icarusrockets/"
+                target="_blank"
+              >
+                <img
+                  src="{{ url_for('static', filename='images/Instagram.png') }}"
+                  alt="Instagram"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Earth. Created for NASA Space Apps Challenge.</p>
         </div>
       </div>
     </footer>
 
-    <script>
-      fetch("/data")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-        });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

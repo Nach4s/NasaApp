@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team - Earth.</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/icon.png') }}"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <img
+              src="{{ url_for('static', filename='images/icon.png') }}"
+              alt="Earth. Logo"
+            />
+            <span>Earth.</span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+            <li><a href="{{ url_for('team') }}">Team</a></li>
+            <li><a href="{{ url_for('process') }}">Process</a></li>
+            <li><a href="{{ url_for('index') }}#about">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="page-hero-content">
+          <h1>Meet Our Team</h1>
+          <p>The passionate individuals behind Earth.</p>
+        </div>
+      </section>
+
+      <section class="team-section">
+        <div class="team-container">
+          <div class="team-intro">
+            <h2>Who We Are</h2>
+            <p>
+              We're group of students from Almaty, Kazakhstan. A group full of
+              diverse personalities and different backgrounds, all brought by
+              achieving whats unexplored. Our team teamed up for the NASA Space
+              Apps Challenge, united by a goal to build a straightforward
+              asteroid tracking platform.
+            </p>
+          </div>
+
+          <div class="team-grid">
+            <!-- Team Member 1 -->
+            <div class="team-card">
+              <div class="team-image">
+                <img
+                  src="{{ url_for('static', filename='images/team/Mansur.jpg') }}"
+                  alt="Shaimerdenov Mansur"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Shaimerdenov Mansur</h3>
+                <p class="role">Team Captain&Inspire</p>
+                <p class="bio">
+                  Guides the team with vision and motivation, analyzes space
+                  mission challenges, and sparks innovative solutions for
+                  exploration and success.
+                </p>
+                <div class="team-social">
+                  <a
+                    href="https://www.instagram.com/jetadooree/"
+                    target="_blank"
+                  >
+                    <img
+                      src="{{ url_for('static', filename='images/Instagram.png') }}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-card">
+              <div class="team-image">
+                <img
+                  src="{{ url_for('static', filename='images/team/Daulet.jpg') }}"
+                  alt="Yergeshbay Daulet"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Yergeshbay Daulet</h3>
+                <p class="role">Inspire</p>
+                <p class="bio">
+                  Creates ideas for the project making it unique and exciting.
+                  Responsible for the process of project submission.
+                </p>
+                <div class="team-social">
+                  <a
+                    href="https://www.instagram.com/d_yergesh/"
+                    target="_blank"
+                  >
+                    <img
+                      src="{{ url_for('static', filename='images/Instagram.png') }}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-card">
+              <div class="team-image">
+                <img
+                  src="{{ url_for('static', filename='images/team/Uali.jpg') }}"
+                  alt="Berik Uali"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Berik Uali</h3>
+                <p class="role">Physicist</p>
+                <p class="bio">
+                  Fond of aerospace and electronics engineering. Specializes in
+                  3D-modeling, CAD, electronics and celestial mechanics
+                </p>
+                <div class="team-social">
+                  <a
+                    href="https://www.instagram.com/ualiberik12?igsh=MXMzOWMzNHBiOGFrcA=="
+                    target="_blank"
+                  >
+                    <img
+                      src="{{ url_for('static', filename='images/Instagram.png') }}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-card">
+              <div class="team-image">
+                <img
+                  src="{{ url_for('static', filename='images/team/Shyngys.jpg') }}"
+                  alt="Tokkozha Shyngys"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Tokkozha Shyngys</h3>
+                <p class="role">Programmer&Designer</p>
+                <p class="bio">
+                  Focused on backend and 3D integration. Develops interactive
+                  systems and connects asteroid simulations with real-time data
+                  for smooth performance.
+                </p>
+                <div class="team-social">
+                  <a href="https://www.instagram.com/nach4sex/" target="_blank">
+                    <img
+                      src="{{ url_for('static', filename='images/Instagram.png') }}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Member 5 -->
+
+            <div class="team-card">
+              <div class="team-image">
+                <img
+                  src="{{ url_for('static', filename='images/team/Arman.jpg') }}"
+                  alt="Temirbulatov Arman"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Temirbulatov Arman</h3>
+                <p class="role">Physics Enthusiast & CAD Developer</p>
+                <p class="bio">
+                  Passionate about space exploration and engineering, skilled in
+                  CAD modeling and physics-based problem solving.
+                </p>
+                <div class="team-social">
+                  <a
+                    href="https://www.instagram.com/cuberarman?igsh=MXJud3l4NHd6YjB4Yg=="
+                    target="_blank"
+                  >
+                    <img
+                      src="{{ url_for('static', filename='images/Instagram.png') }}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Member 6 -->
+
+            <div class="team-card">
+              <div class="team-image">
+                <img
+                  src="{{ url_for('static', filename='images/team/Mukhidin.jpg') }}"
+                  alt="Mukhidin Zhaparov"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Mukhidin Zhaparov</h3>
+                <p class="role">Data scientist&Full-stack Devoloper</p>
+                <p class="bio">
+                  Analyzes complex datasets for insights and builds scalable web
+                  apps, combining analytics with precise coding for
+                  mission-critical solutions.
+                </p>
+                <div class="team-social">
+                  <a
+                    href="https://www.instagram.com/xenitial44/"
+                    target="_blank"
+                  >
+                    <img
+                      src="{{ url_for('static', filename='images/Instagram.png') }}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="values-section">
+        <div class="values-container">
+          <h2>Our Values</h2>
+          <div class="values-grid">
+            <div class="value-card">
+              <h3>🚀 Innovation</h3>
+              <p>
+                We push boundaries to create cutting-edge solutions for space
+                science visualization.
+              </p>
+            </div>
+            <div class="value-card">
+              <h3>🤝 Collaboration</h3>
+              <p>
+                Teamwork and open communication drive our success in tackling
+                complex challenges.
+              </p>
+            </div>
+            <div class="value-card">
+              <h3>📚 Education</h3>
+              <p>
+                We believe in making space science accessible and engaging for
+                everyone.
+              </p>
+            </div>
+            <div class="value-card">
+              <h3>🎯 Accuracy</h3>
+              <p>
+                Scientific precision and data integrity are at the core of
+                everything we build.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Earth.</h3>
+            <p>NASA Space Apps Challenge 2025</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul class="nav-menu-footer">
+              <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+              <li><a href="{{ url_for('team') }}">Team</a></li>
+              <li><a href="{{ url_for('process') }}">Process</a></li>
+              <li><a href="{{ url_for('index') }}#about">About</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="https://www.nasa.gov/" target="_blank">NASA</a></li>
+              <li>
+                <a href="https://cneos.jpl.nasa.gov/" target="_blank">CNEOS</a>
+              </li>
+              <li>
+                <a href="https://www.spaceappschallenge.org/" target="_blank"
+                  >Space Apps</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/icarusrockets/"
+                target="_blank"
+              >
+                <img
+                  src="{{ url_for('static', filename='images/Instagram.png') }}"
+                  alt="Instagram"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Earth. Created for NASA Space Apps Challenge.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

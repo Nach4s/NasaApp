@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Process - Earth.</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/icon.png') }}"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <img
+              src="{{ url_for('static', filename='images/icon.png') }}"
+              alt="Earth. Logo"
+            />
+            <span>Earth.</span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+            <li><a href="{{ url_for('team') }}">Team</a></li>
+            <li><a href="{{ url_for('process') }}">Process</a></li>
+            <li><a href="{{ url_for('index') }}#about">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="page-hero-content">
+          <h1>Development Process</h1>
+          <p>How we built Earth. from concept to reality</p>
+        </div>
+      </section>
+
+      <section class="process-section">
+        <div class="process-container">
+          <div class="process-intro">
+            <h2>Our Journey</h2>
+            <p>
+              From initial brainstorming to final implementation, here's how we
+              developed Earth. for the NASA Space Apps Challenge. Our process
+              combined agile development, scientific research, and creative
+              problem-solving.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <!-- Phase 1 -->
+            <div class="timeline-item">
+              <div class="timeline-marker">1</div>
+              <div class="timeline-content">
+                <h3>Research & Planning</h3>
+                <p class="timeline-date">Day 1</p>
+                <p>
+                  We began by researching NASA's asteroid tracking data,
+                  studying existing visualization tools, and identifying gaps in
+                  public accessibility. Our team analyzed the challenge
+                  requirements and defined our project scope.
+                </p>
+                <ul class="timeline-list">
+                  <li>Studied NASA database and API documentation</li>
+                  <li>Analyzed user needs for asteroid visualization</li>
+                  <li>Created initial wireframes and technical architecture</li>
+                  <li>Defined project milestones and deliverables</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="timeline-item">
+              <div class="timeline-marker">2</div>
+              <div class="timeline-content">
+                <h3>Design & Prototyping</h3>
+                <p class="timeline-date">Day 2</p>
+                <p>
+                  Our design team created mockups and interactive prototypes
+                  while developers set up the technical foundation. We focused
+                  on creating an intuitive interface that makes complex data
+                  accessible.
+                </p>
+                <ul class="timeline-list">
+                  <li>Designed UI/UX with space-themed aesthetics</li>
+                  <li>Created interactive prototypes for user testing</li>
+                  <li>Set up development environment and version control</li>
+                  <li>Established coding standards and best practices</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="timeline-item">
+              <div class="timeline-marker">3</div>
+              <div class="timeline-content">
+                <h3>3D Visualization Development</h3>
+                <p class="timeline-date">Day 3</p>
+                <p>
+                  The core of our project: building the interactive 3D Earth
+                  model with WebGL and Three.js. This phase involved complex
+                  calculations for accurate asteroid trajectory visualization.
+                </p>
+                <ul class="timeline-list">
+                  <li>Implemented 3D Earth globe with realistic textures</li>
+                  <li>Developed asteroid trajectory calculation algorithms</li>
+                  <li>Created interactive controls for zoom and rotation</li>
+                  <li>Optimized rendering performance for smooth experience</li>
+                  <li>Created animations of asteroid explosions</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="timeline-item">
+              <div class="timeline-marker">4</div>
+              <div class="timeline-content">
+                <h3>Data Integration</h3>
+                <p class="timeline-date">Day 4</p>
+                <p>
+                  Connecting our visualization to real data sources and
+                  implementing the input system for custom asteroid parameters.
+                  We ensured data accuracy and real-time updates.
+                </p>
+                <ul class="timeline-list">
+                  <li>Built input form for custom asteroid parameters</li>
+                  <li>Implemented data validation and error handling</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="timeline-item">
+              <div class="timeline-marker">5</div>
+              <div class="timeline-content">
+                <h3>Testing & Refinement</h3>
+                <p class="timeline-date">Day 5</p>
+                <p>
+                  Rigorous testing across devices and browsers, gathering
+                  feedback, and polishing the user experience. We focused on
+                  performance optimization and accessibility improvements.
+                </p>
+                <ul class="timeline-list">
+                  <li>Conducted cross-browser and device testing</li>
+                  <li>Gathered user feedback and iterated on design</li>
+                  <li>Fixed bugs and optimized performance</li>
+                  <li>Improved accessibility features</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Phase 6 -->
+            <div class="timeline-item">
+              <div class="timeline-marker">6</div>
+              <div class="timeline-content">
+                <h3>Launch & Documentation</h3>
+                <p class="timeline-date">Day 6</p>
+                <p>
+                  Final preparations for the NASA Space Apps Challenge
+                  submission, including comprehensive documentation, demo
+                  videos, and presentation materials.
+                </p>
+                <ul class="timeline-list">
+                  <li>Created project documentation and user guides</li>
+                  <li>Recorded demo videos and screenshots</li>
+                  <li>Prepared presentation for judges</li>
+                  <li>Deployed to production environment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tech-stack-section">
+        <div class="tech-container">
+          <h2>Technology Stack</h2>
+          <p>The tools and technologies that power Earth.</p>
+
+          <div class="tech-grid">
+            <div class="tech-category">
+              <h3>Frontend</h3>
+              <ul>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>Three.js for 3D graphics</li>
+                <li>WebGL for rendering</li>
+              </ul>
+            </div>
+
+            <div class="tech-category">
+              <h3>Backend</h3>
+              <ul>
+                <li>Python/Flask</li>
+                <li>RESTful API design</li>
+                <li>NASA API integration</li>
+                <li>Data processing algorithms</li>
+              </ul>
+            </div>
+
+            <div class="tech-category">
+              <h3>Data & APIs</h3>
+              <ul>
+                <li>NASA CNEOS API</li>
+                <li>Astronomical calculations</li>
+                <li>Real-time data fetching</li>
+                <li>JSON data formatting</li>
+              </ul>
+            </div>
+
+            <div class="tech-category">
+              <h3>Tools</h3>
+              <ul>
+                <li>Git & GitHub</li>
+                <li>VS Code</li>
+                <li>Figma for design</li>
+                <li>Chrome DevTools</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="challenges-section">
+        <div class="challenges-container">
+          <h2>Challenges & Solutions</h2>
+
+          <div class="challenges-grid">
+            <div class="challenge-card">
+              <h3>Challenge: 3D Performance</h3>
+              <p>
+                <strong>Problem:</strong> Rendering complex 3D graphics caused
+                lag on lower-end devices.
+              </p>
+              <p>
+                <strong>Solution:</strong> Implemented level-of-detail (LOD)
+                system and optimized mesh complexity based on device
+                capabilities.
+              </p>
+            </div>
+
+            <div class="challenge-card">
+              <h3>Challenge: Data Accuracy</h3>
+              <p>
+                <strong>Problem:</strong> Ensuring astronomical calculations
+                were scientifically accurate.
+              </p>
+              <p>
+                <strong>Solution:</strong> Consulted with astronomy experts and
+                validated against NASA's published data.
+              </p>
+            </div>
+
+            <div class="challenge-card">
+              <h3>Challenge: User Experience</h3>
+              <p>
+                <strong>Problem:</strong> Making complex data intuitive for
+                non-technical users.
+              </p>
+              <p>
+                <strong>Solution:</strong> Conducted user testing and simplified
+                interface with helpful tooltips and guides.
+              </p>
+            </div>
+
+            <div class="challenge-card">
+              <h3>Challenge: Real-Time Updates</h3>
+              <p>
+                <strong>Problem:</strong> Keeping asteroid data current without
+                overwhelming the API.
+              </p>
+              <p>
+                <strong>Solution:</strong> Implemented smart caching and
+                background updates with rate limiting.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Earth.</h3>
+            <p>NASA Space Apps Challenge 2025</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul class="nav-menu-footer">
+              <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+              <li><a href="{{ url_for('team') }}">Team</a></li>
+              <li><a href="{{ url_for('process') }}">Process</a></li>
+              <li><a href="{{ url_for('index') }}#about">About</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="https://www.nasa.gov/" target="_blank">NASA</a></li>
+              <li>
+                <a href="https://cneos.jpl.nasa.gov/" target="_blank">CNEOS</a>
+              </li>
+              <li>
+                <a href="https://www.spaceappschallenge.org/" target="_blank"
+                  >Space Apps</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/icarusrockets/"
+                target="_blank"
+              >
+                <img
+                  src="{{ url_for('static', filename='images/Instagram.png') }}"
+                  alt="Instagram"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Earth. Created for NASA Space Apps Challenge.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
