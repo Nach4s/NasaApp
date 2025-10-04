@@ -113,6 +113,20 @@ function setupControls() {
 
   const canvas = document.getElementById("earth-canvas")
 
+// Fullscreen Panel Control
+const fullscreenPanel = document.getElementById("fullscreenPanel");
+const closePanelBtn = document.getElementById("closePanelBtn");
+
+function openPanel() {
+  fullscreenPanel.style.right = "0";
+}
+
+function closePanel() {
+  fullscreenPanel.style.right = "-450px";
+}
+
+closePanelBtn.addEventListener("click", closePanel);
+
   // Mouse down
   canvas.addEventListener("mousedown", (e) => {
     controls.isDragging = true
@@ -211,6 +225,32 @@ function addAsteroidMarker(latitude, longitude, asteroidData) {
   console.log("[v0] Added asteroid marker:", asteroidData.name, "at", latitude, longitude)
 }
 
+// После того, как инициализировали renderer, camera и earth:
+const canvas = document.getElementById("earth-canvas");
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+
+canvas.addEventListener("click", (event) => {
+  if (!isFullscreen) return; // только в fullscreen
+
+  const rect = canvas.getBoundingClientRect();
+  mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+  mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+  const intersects = raycaster.intersectObject(earth, true);
+
+  if (intersects.length > 0) {
+    const point = intersects[0].point;
+    const radius = 1; // радиус Земли
+    const lat = 90 - (Math.acos(point.y / radius) * 180 / Math.PI);
+    const lon = ((Math.atan2(point.z, -point.x) * 180 / Math.PI) - 180) % 360;
+
+    document.getElementById("latitude").value = lat.toFixed(2);
+    document.getElementById("longitude").value = lon.toFixed(2);
+  }
+});
+
 // Animation loop
 function animate() {
   requestAnimationFrame(animate)
@@ -249,18 +289,19 @@ function onWindowResize() {
 
 // Fullscreen toggle
 function toggleFullscreen() {
-  const container = document.getElementById("earth-model")
-  isFullscreen = !isFullscreen
+  const container = document.getElementById("earth-model");
+  isFullscreen = !isFullscreen;
 
   if (isFullscreen) {
-    container.classList.add("fullscreen")
+    container.classList.add("fullscreen");
+    openPanel();
   } else {
-    container.classList.remove("fullscreen")
+    container.classList.remove("fullscreen");
+    closePanel();
   }
 
-  onWindowResize()
+  onWindowResize();
 }
-
 
 
 // Initialize when DOM is loaded

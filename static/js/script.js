@@ -1,57 +1,66 @@
 // Asteroid Form Submission Handler
 document.addEventListener("DOMContentLoaded", () => {
-  const asteroidForm = document.getElementById("asteroidForm")
+  const asteroidForm = document.getElementById("asteroidForm");
 
   if (asteroidForm) {
     asteroidForm.addEventListener("submit", (e) => {
-      e.preventDefault()
+      e.preventDefault();
 
-      // Get form values
+      // Get form values (mass and velocity components)
       const asteroidData = {
-        name: document.getElementById("asteroidName").value,
-        diameter: document.getElementById("diameter").value,
-        velocity: document.getElementById("velocity").value,
-        distance: document.getElementById("distance").value,
+        mass: Number.parseFloat(document.getElementById("mass").value),
+        velocity: {
+          x: Number.parseFloat(document.getElementById("vx").value),
+          y: Number.parseFloat(document.getElementById("vy").value),
+          z: Number.parseFloat(document.getElementById("vz").value),
+        },
         latitude: Number.parseFloat(document.getElementById("latitude").value),
         longitude: Number.parseFloat(document.getElementById("longitude").value),
-      }
+      };
 
-      console.log("Asteroid data submitted:", asteroidData)
+      console.log("Asteroid data submitted:", asteroidData);
 
+      // Add asteroid marker to Earth (if function exists)
       if (window.addAsteroidToEarth) {
-        window.addAsteroidToEarth(asteroidData.latitude, asteroidData.longitude, asteroidData)
-        alert(`Asteroid "${asteroidData.name}" has been added to the 3D Earth visualization!`)
+        window.addAsteroidToEarth(
+          asteroidData.latitude,
+          asteroidData.longitude,
+          asteroidData
+        );
+        alert(
+          `Asteroid with mass ${asteroidData.mass} kg has been added to the 3D Earth visualization!`
+        );
       } else {
-        alert(`Asteroid "${asteroidData.name}" data received. 3D Earth is loading...`)
+        alert(
+          `Asteroid data received. 3D Earth is loading...`
+        );
       }
 
       // Optional: Reset form
       // asteroidForm.reset();
-    })
+    });
   }
 
-  // Smooth scrolling for anchor links (only for # links, not page navigation)
+  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
-      e.preventDefault()
-      const target = document.querySelector(this.getAttribute("href"))
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
       if (target) {
         target.scrollIntoView({
           behavior: "smooth",
           block: "start",
-        })
+        });
       }
-    })
-  })
+    });
+  });
 
-  // This ensures navigation works even if there are any conflicts
-  const pageLinks = document.querySelectorAll('a[href$=".html"]')
+  // Debug navigation links ending with .html
+  const pageLinks = document.querySelectorAll('a[href$=".html"]');
   pageLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
-      const href = this.getAttribute("href")
-      console.log("Navigating to:", href)
-      // Let the default behavior happen (navigate to the page)
-      // This is just for debugging - the link should work normally
-    })
-  })
-})
+      const href = this.getAttribute("href");
+      console.log("Navigating to:", href);
+    });
+  });
+});

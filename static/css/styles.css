@@ -160,7 +160,9 @@ h3 {
   margin: 0 auto;
 }
 
-/* Earth Container */
+/* -------------------------
+   Earth Container & Canvas
+------------------------- */
 .earth-container {
   width: 100%;
   height: 600px;
@@ -169,8 +171,7 @@ h3 {
   border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
-  position: relative; 
-  z-index: 1; 
+  z-index: 1;
 }
 
 #earth-canvas {
@@ -181,6 +182,9 @@ h3 {
   z-index: 1;
 }
 
+/* -------------------------
+   Fullscreen Button
+------------------------- */
 .fullscreen-btn {
   position: absolute;
   top: 1rem;
@@ -200,16 +204,6 @@ h3 {
   z-index: 10;
 }
 
-.fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 1000;
-}
-
-
 .fullscreen-btn:hover {
   background: rgba(99, 102, 241, 0.3);
   border-color: var(--primary-color);
@@ -221,6 +215,9 @@ h3 {
   height: 24px;
 }
 
+/* -------------------------
+   Earth Controls
+------------------------- */
 .earth-controls {
   position: absolute;
   bottom: 1rem;
@@ -236,107 +233,199 @@ h3 {
   z-index: 10;
 }
 
+/* -------------------------
+   Fullscreen Earth Container
+------------------------- */
 .earth-container.fullscreen {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100vw !important;
+  height: 100vh !important;
   z-index: 9999;
   border-radius: 0;
   margin: 0;
-  background: var(--darker-bg); /* solid opaque background */
+  background: var(--darker-bg); /* solid opaque background for fullscreen */
 }
 
 .earth-container.fullscreen > *:not(#earth-canvas):not(.fullscreen-btn):not(.earth-controls) {
-  display: none; 
+  display: none;
 }
 
-
-
-/* Input Section */
-.input-section {
-  background: var(--card-bg);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  padding: 4rem 2rem;
-  margin: 4rem 0;
+/* -------------------------
+   Fullscreen Panel (Asteroid Input)
+------------------------- */
+.fullscreen-panel {
+  position: fixed;
+  top: 0;
+  right: -450px; /* hidden by default */
+  width: 420px; /* panel width */
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+  backdrop-filter: blur(20px);
+  border-left: 1px solid var(--border-color);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  overflow-y: auto;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2rem;
 }
 
-.input-container {
-  max-width: 900px;
-  margin: 0 auto;
+/* Panel scrollbars */
+.fullscreen-panel::-webkit-scrollbar {
+  width: 8px;
 }
 
-.input-container h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
+.fullscreen-panel::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
 }
 
-.input-container > p {
-  text-align: center;
-  color: var(--gray-text);
-  margin-bottom: 3rem;
+.fullscreen-panel::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
 }
 
-.asteroid-form {
-  background: var(--dark-bg);
-  padding: 2.5rem;
-  border-radius: 16px;
-  border: 1px solid var(--border-color);
+.fullscreen-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+/* Panel open state */
+.earth-container.fullscreen ~ .fullscreen-panel {
+  right: 0;
+}
+
+/* Panel content */
+.fullscreen-panel .input-container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.fullscreen-panel h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fullscreen-panel > .input-container > p {
+  font-size: 0.95rem;
+  line-height: 1.6;
   margin-bottom: 2rem;
+  color: var(--gray-text);
 }
 
-.form-group {
+.fullscreen-panel .asteroid-form {
+  background: rgba(2, 6, 23, 0.6);
+  padding: 1.75rem;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.fullscreen-panel .form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.fullscreen-panel .form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--light-text);
+  margin-bottom: 0.5rem;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
 }
 
-.form-group label {
-  font-weight: 600;
-  color: var(--light-text);
-  font-size: 0.9rem;
+.fullscreen-panel .form-group label::before {
+  content: "→";
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
-.form-group input {
-  padding: 0.75rem 1rem;
-  background: var(--darker-bg);
+.fullscreen-panel .form-group input {
+  padding: 0.875rem 1rem;
+  background: rgba(2, 6, 23, 0.8);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 10px;
   color: var(--light-text);
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
 
-.form-group input:focus {
-  outline: none;
+.fullscreen-panel .form-group input:focus {
   border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  background: rgba(2, 6, 23, 0.95);
 }
 
-.submit-btn {
-  width: 100%;
-  padding: 1rem 2rem;
+.fullscreen-panel .form-group input::placeholder {
+  color: rgba(148, 163, 184, 0.5);
+}
+
+.fullscreen-panel .submit-btn {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
-.submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+.fullscreen-panel .submit-btn:hover {
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+.fullscreen-panel .submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Panel close button */
+.panel-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid var(--border-color);
+  color: var(--light-text);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.panel-close-btn:hover {
+  background: rgba(236, 72, 153, 0.2);
+  border-color: var(--accent-color);
+  transform: rotate(90deg);
+}
+
+.panel-close-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* -------------------------
+   Miscellaneous UI Fixes
+------------------------- */
+.nav-menu a {
+  cursor: pointer; /* Explicitly set cursor */
+}
+
+.cta-btn {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.footer-section ul li a {
+  cursor: pointer;
 }
 
 /* About Section */
